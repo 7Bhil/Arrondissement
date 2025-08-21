@@ -1,11 +1,12 @@
-import { Routes, Route } from 'react-router-dom'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Home from '../pages/Home'
-import About from '../pages/About'
-import News from '../pages/News'
-import Projects from '../pages/Projects'
-import Contact from '../pages/Contact'
+import { Routes, Route } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import News from "../pages/News";
+import Projects from "../pages/Projects";
+import Contact from "../pages/Contact";
+import Apropos from "../pages/Apropos";
 
 function AppRoutes() {
   return (
@@ -14,7 +15,7 @@ function AppRoutes() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/a-propos" element={<About />} />
+          <Route path="/a-propos" element={<Apropos />} />
           <Route path="/actualites" element={<News />} />
           <Route path="/projets" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
@@ -22,7 +23,7 @@ function AppRoutes() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default AppRoutes
+export default AppRoutes;
