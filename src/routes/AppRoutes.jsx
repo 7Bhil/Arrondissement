@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Home from "../pages/Home";
-import About from "../pages/About";
 import News from "../pages/News";
 import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
@@ -16,7 +15,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/a-propos" element={<Apropos />} />
-          <Route path="/actualites" element={<News />} />
+          {/**<Route path="/actualites" element={<News />} />*/}
           <Route path="/projets" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

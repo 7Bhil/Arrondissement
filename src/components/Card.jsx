@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Card = ({
   title,
   description,
@@ -5,66 +7,54 @@ const Card = ({
   date,
   category,
   href,
-  className = "",
+  className,
   children,
 }) => {
   return (
     <div
-      className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 ${className}`}
+      className={`bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 ${className}`}
     >
       {image && (
-        <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-          <img src={image} alt={title} className="w-full h-48 object-cover" />
-        </div>
-      )}
-
-      <div className="p-6">
-        {category && (
-          <div className="flex items-center mb-2">
-            <span className="inline-block bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full font-medium">
+        <div className="h-48 bg-cover bg-center relative overflow-hidden">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+          {category && (
+            <span className="absolute top-4 left-4 px-3 py-1 bg-white/90 text-gray-800 rounded-full text-sm font-medium shadow-md">
               {category}
             </span>
-          </div>
-        )}
-
-        {title && (
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
-            {href ? (
-              <a
-                href={href}
-                className="hover:text-primary-600 transition-colors"
-              >
-                {title}
-              </a>
-            ) : (
-              title
-            )}
-          </h3>
-        )}
-
-        {description && (
-          <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-            {description}
-          </p>
-        )}
-
+          )}
+        </div>
+      )}
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+        <p className="text-gray-600 mb-4">{description}</p>
+        {date && <p className="text-sm text-gray-500 mb-4">{date}</p>}
         {children}
-
-        {date && (
-          <div className="flex items-center text-xs text-gray-500 mt-4">
+        {href && (
+          <Link
+            to={href}
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+            style={{ color: "#AACDF6" }}
+          >
+            Lire la suite
             <svg
-              className="w-4 h-4 mr-1"
-              fill="currentColor"
-              viewBox="0 0 20 20"
+              className="w-4 h-4 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
               <path
-                fillRule="evenodd"
-                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                clipRule="evenodd"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
               />
             </svg>
-            {date}
-          </div>
+          </Link>
         )}
       </div>
     </div>

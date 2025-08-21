@@ -1,24 +1,45 @@
+import { Palette, GraduationCap, Lightbulb } from "lucide-react";
+
+
 const projects = [
   {
     id: 1,
-    title: "Construction d'écoles primaires",
+    title: "Accompagnement des Artistes Peintres",
     description:
-      "Construction de 5 nouvelles écoles primaires pour améliorer l'accès à l'éducation de base.",
-    status: "En cours",
+      "Soutien financier et matériel aux artistes peintres locaux pour développer leur talent et promouvoir l'art dans le 1er arrondissement. Programme incluant fourniture de matériel et organisation d'expositions.",
+    icone: Palette,
+    couleur: "bg-purple-500",
+    couleurBg: "bg-purple-50",
+    couleurBorder: "border-purple-200",
+    couleurText: "text-purple-700",
+    categorie: "Culture",
+    impact: "5 à 15 artistes soutenus",
   },
   {
     id: 2,
-    title: "Réhabilitation des routes",
+    title: "Scolarité des Enfants Orphelins",
     description:
-      "Réfection de 15 km de routes pour faciliter les déplacements et le commerce.",
-    status: "Planifié",
+      "Prise en charge des frais de scolarité d'enfants orphelins du 1er arrondissement pour garantir leur accès à l'éducation. Un investissement dans l'avenir de notre jeunesse vulnérable.",
+    icone: GraduationCap,
+    couleur: "bg-blue-500",
+    couleurBg: "bg-blue-50",
+    couleurBorder: "border-blue-200",
+    couleurText: "text-blue-700",
+    categorie: "Éducation",
+    impact: "10 à 50 enfants scolarisés",
   },
   {
     id: 3,
-    title: "Programme d'assainissement",
+    title: "Éclairage Public des Quartiers",
     description:
-      "Mise en place d'un système de gestion des déchets et d'assainissement.",
-    status: "En cours",
+      "Installation et amélioration de l'éclairage public dans les quartiers prioritaires pour renforcer la sécurité et améliorer la qualité de vie des habitants. Éclairage LED économique et durable.",
+    icone: Lightbulb,
+    couleur: "bg-yellow-500",
+    couleurBg: "bg-yellow-50",
+    couleurBorder: "border-yellow-200",
+    couleurText: "text-yellow-700",
+    categorie: "Infrastructures",
+    impact: "2 à 5 quartiers éclairés",
   },
 ];
 

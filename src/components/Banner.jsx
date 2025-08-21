@@ -1,54 +1,45 @@
-const Banner = ({ 
-  title, 
-  subtitle, 
-  description, 
-  backgroundImage, 
-  overlay = true,
-  height = 'h-96',
-  textAlign = 'left',
-  children 
+const Banner = ({
+  title,
+  subtitle,
+  description,
+  backgroundImage,
+  height,
+  textAlign,
+  children,
 }) => {
   return (
-    <div className={`relative ${height} flex items-center justify-center overflow-hidden`}>
-      {/* Background Image */}
-      {backgroundImage && (
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
-        />
-      )}
-      
-      {/* Overlay */}
-      {overlay && (
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
-      )}
-      
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className={`text-white ${textAlign === 'center' ? 'text-center' : textAlign === 'right' ? 'text-right' : 'text-left'}`}>
-          {subtitle && (
-            <p className="text-lg font-medium text-primary-200 mb-2">
-              {subtitle}
-            </p>
-          )}
-          
-          {title && (
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              {title}
-            </h1>
-          )}
-          
-          {description && (
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl">
-              {description}
-            </p>
-          )}
-          
-          {children}
-        </div>
+    <div
+      className={`${height} bg-cover bg-center bg-no-repeat relative flex items-center justify-center`}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundAttachment: "fixed",
+      }}
+    >
+      {/* Overlay avec dégradé amélioré */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/50"></div>
+      <div
+        className="absolute inset-0"
+        style={{ backgroundColor: "rgba(170, 205, 246, 0.1)" }}
+      ></div>
+
+      <div
+        className={`relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ${
+          textAlign === "center" ? "text-center" : ""
+        }`}
+      >
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+          {title}
+        </h1>
+        <p className="text-xl md:text-2xl text-gray-100 mb-4 drop-shadow-md">
+          {subtitle}
+        </p>
+        <p className="text-lg text-gray-200 mb-8 max-w-3xl mx-auto drop-shadow-md">
+          {description}
+        </p>
+        {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;
