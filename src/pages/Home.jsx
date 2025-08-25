@@ -462,14 +462,14 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Conseils de Quartier
+                Conseils d'arrondissement
               </h3>
               <p className="text-gray-600 mb-4 leading-relaxed">
                 Animation des conseils de quartier pour une gestion
                 participative
               </p>
               <div className="font-bold text-lg" style={{ color: "#AACDF6" }}>
-                15 quartiers
+                29 quartiers
               </div>
             </div>
 
