@@ -112,7 +112,7 @@ const Footer = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>A côté du marché Dantokpa, Arrondissement</span>
+                <span>A côté du marché Central, Arrondissement</span>
               </div>
               <div className="flex items-center space-x-2">
                 <svg

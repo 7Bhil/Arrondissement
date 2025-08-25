@@ -2,42 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 // Composant Banner amélioré
 import Banner from "../components/Banner";
-import Card from "../components/Card";
 import projects from "../data/projects";
-
-// Actualités
-const newsItems = [
-  {
-    id: 1,
-    title: "Inauguration du nouveau centre de formation",
-    description:
-      "Lancement officiel du centre de formation professionnelle avec 5 filières techniques.",
-    image:
-      "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    date: "15 Août 2025",
-    category: "Formation",
-  },
-  {
-    id: 2,
-    title: "Distribution de fournitures scolaires",
-    description:
-      "450 élèves ont bénéficié de kits scolaires complets pour la rentrée 2025.",
-    image:
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    date: "10 Août 2025",
-    category: "Éducation",
-  },
-  {
-    id: 3,
-    title: "Festival des Arts Locaux",
-    description:
-      "Premier festival artistique de l'arrondissement avec 25 artistes participants.",
-    image:
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    date: "5 Août 2025",
-    category: "Culture",
-  },
-];
 
 const Home = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -92,6 +57,7 @@ const Home = () => {
                   className="absolute -bottom-4 -right-4 text-white p-6 rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300"
                   style={{ backgroundColor: "#9AC454" }}
                 >
+                  <p className="text-sm font-extralight">El Hadj MOUBARACOU LATIFU</p>
                   <p className="text-sm font-bold">Au service du peuple</p>
                   <p className="text-xs opacity-90">Depuis 2020</p>
                 </div>
@@ -315,93 +281,64 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
-            {projects.map((project, index) => (
-              <div
-                key={project.id}
-                className="group relative bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-white/50"
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                  animation: "fadeInUp 0.6s ease-out forwards",
-                }}
-              >
-                {/* Card Header with Gradient */}
-                <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-6 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
-
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                        <svg
-                          className="w-6 h-6 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-2m-14 0H3m2 0h2m0 0V9a2 2 0 012-2h2a2 2 0 012 2v10M9 7h6m-6 4h6m-6 4h6"
-                          />
-                        </svg>
-                      </div>
-
-                      <span
-                        className={`px-4 py-2 rounded-full text-xs font-bold backdrop-blur-sm ${
-                          project.status === "En cours"
-                            ? "bg-green-100/90 text-green-800 border border-green-200"
-                            : project.status === "Planifié"
-                            ? "bg-yellow-100/90 text-yellow-800 border border-yellow-200"
-                            : "bg-blue-100/90 text-blue-800 border border-blue-200"
-                        }`}
+          {/* Grille des projets */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((projet) => {
+              const IconeComponent = projet.icone;
+              return (
+                <div
+                  key={projet.id}
+                  className={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${projet.couleurBorder} border-2 overflow-hidden group`}
+                >
+                  {/* En-tête de la carte */}
+                  <div
+                    className={`${projet.couleurBg} p-6 relative overflow-hidden`}
+                  >
+                    <div className="flex items-start justify-between">
+                      <div
+                        className={`${projet.couleur} p-4 rounded-xl text-white shadow-lg`}
                       >
-                        {project.status}
+                        <IconeComponent className="w-8 h-8" />
+                      </div>
+                      <span
+                        className={`px-3 py-1 rounded-full text-sm font-medium ${projet.couleurText} bg-white shadow-sm`}
+                      >
+                        {projet.categorie}
                       </span>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:scale-105 transition-transform duration-300">
-                      {project.title}
-                    </h3>
+                    {/* Effet décoratif */}
+                    <div
+                      className={`absolute -bottom-6 -right-6 w-24 h-24 ${projet.couleur} opacity-10 rounded-full`}
+                    ></div>
                   </div>
+
+                  {/* Contenu de la carte */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
+                      {projet.titre}
+                    </h3>
+
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      {projet.description}
+                    </p>
+
+                    {/* Impact/Statistique */}
+                    <div
+                      className={`inline-flex items-center px-4 py-2 rounded-lg ${projet.couleurBg} ${projet.couleurText} font-semibold text-sm`}
+                    >
+                      <div
+                        className={`w-2 h-2 ${projet.couleur} rounded-full mr-2`}
+                      ></div>
+                      {projet.impact}
+                    </div>
+                  </div>
+
+                  {/* Barre de couleur en bas */}
+                  <div className={`h-1 ${projet.couleur}`}></div>
                 </div>
-
-                {/* Card Body */}
-                <div className="p-8">
-                  <p className="text-gray-600 mb-8 leading-relaxed text-base">
-                    {project.description}
-                  </p>
-
-                  {/* Action Button */}
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="w-full group relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-2xl font-semibold hover:from-blue-700 hover:to-indigo-700 transform hover:scale-[1.02] hover:shadow-xl transition-all duration-300 overflow-hidden"
-                  >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      Découvrir le projet
-                      <svg
-                        className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 7l5 5m0 0l-5 5m5-5H6"
-                        />
-                      </svg>
-                    </span>
-
-                    {/* Button shine effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                  </button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Call to Action */}
@@ -675,12 +612,18 @@ const Home = () => {
       </section>*/}
 
       {/* Call to Action Final */}
-      <section
-        className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden"
-        style={{
-          background: `linear-gradient(135deg, #AACDF6 0%, #7FB3D3 50%, #5B9BD5 100%)`,
-        }}
-      >
+      <section className="py-20 relative overflow-hidden">
+        {/* Image de fond */}
+        <div className="absolute inset-0">
+          <img
+            src="https://i.imgur.com/eLsVFBf.jpeg"
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay noir semi-transparent */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+
         {/* Éléments décoratifs de fond */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full"></div>
@@ -688,6 +631,7 @@ const Home = () => {
           <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-white rounded-full"></div>
         </div>
 
+        {/* Contenu */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 drop-shadow-lg">
             Ensemble, Construisons l'Avenir de Notre Arrondissement
