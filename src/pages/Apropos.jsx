@@ -5,12 +5,12 @@ import image1 from "../assets/images/image1.jpg";
 const Apropos = () => {
   // ===== SECTION MODIFIABLE : DONNÉES DU CHEF D'ARRONDISSEMENT =====
   const chefData = {
-    name: "El Hadj Moubaracou Latifu",
+    name: "El Hadj Moubaracou LATIFU",
     title: "Chef du 1er Arrondissement de Porto-Novo",
     // Remplacer par l'URL de la vraie photo
     photo: image1,
     biography: [
-      "Leader engagé pour le développement local du 1er arrondissement de Porto-Novo, El Hadj Moubaracou Latifu œuvre quotidiennement pour l'amélioration des conditions de vie de ses concitoyens.",
+      "Leader engagé pour le développement local du 1er arrondissement de Porto-Novo, El Hadj Moubaracou LATIFU œuvre quotidiennement pour l'amélioration des conditions de vie de ses concitoyens.",
       "Son action se concentre particulièrement sur le soutien à la santé communautaire, à l'éducation, à la culture et à l'insertion des jeunes dans la société.",
       "Parmi ses réalisations concrètes : le financement de cantines scolaires, l'accompagnement d'artistes locaux, l'amélioration de l'éclairage des quartiers et l'insertion des enfants dans des centres de formation professionnelle.",
     ],
@@ -141,7 +141,7 @@ const Apropos = () => {
             <p className="text-gray-600">Projets réalisés</p>
           </div>
           <div className="text-center p-6 bg-white rounded-xl shadow-md">
-            <div className="text-3xl font-bold text-purple-600 mb-2">1000+</div>
+            <div className="text-3xl font-bold text-purple-600 mb-2">100+</div>
             <p className="text-gray-600">Familles accompagnées</p>
           </div>
         </div>

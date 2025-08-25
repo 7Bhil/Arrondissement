@@ -62,9 +62,8 @@ const Contact = () => {
       ),
       title: "Adresse",
       details: [
-        "123 Avenue Principale",
-        "Arrondissement Central",
-        "Cotonou, Littoral",
+        "Premier Arrondissement",
+        "Porto-Novo, Ouémé",
         "République du Bénin",
       ],
     },
@@ -86,9 +85,9 @@ const Contact = () => {
       ),
       title: "Téléphone",
       details: [
-        "+229 21 XX XX XX (Bureau)",
-        "+229 97 XX XX XX (Mobile)",
-        "Urgences: +229 95 XX XX XX",
+        "+229 01 97 57 96 66 (Bureau)",
+        "+229 01 97 57 96 66 (Mobile)",
+        "Urgences: +229 01 97 57 96 66",
       ],
     },
     {
@@ -109,9 +108,9 @@ const Contact = () => {
       ),
       title: "Email",
       details: [
-        "contact@chef-arrondissement.bj",
-        "projets@chef-arrondissement.bj",
-        "urgences@chef-arrondissement.bj",
+        "7bhilal.chitou7@gmail.com",
+        "7bhilal.chitou7@gmail.com",
+        "7bhilal.chitou7@gmail.com",
       ],
     },
     {
@@ -132,7 +131,7 @@ const Contact = () => {
       ),
       title: "Horaires",
       details: [
-        "Lundi - Vendredi: 8h00 - 17h00",
+        "Lundi - Vendredi: 8h00 - 17h30",
         "Samedi: 8h00 - 12h00",
         "Dimanche: Fermé",
         "Urgences: 24h/24",
@@ -400,7 +399,7 @@ const Contact = () => {
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.1957945187996!2d2.6262793758848817!3d6.496878323470297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b5a0555555555%3A0xfe49b3d92e20fadc!2sagbokou!5e0!3m2!1sfr!2sbj!4v1755656256182!5m2!1sfr!2sbj"
                     width="550"
                     height="255"
-                    style={{borderRadius:10}}
+                    style={{ borderRadius: 10 }}
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"

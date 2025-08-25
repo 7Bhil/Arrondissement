@@ -132,7 +132,7 @@ const Projects = () => {
             <p className="text-lg text-gray-500">
               Découvrez ses principales réalisations dans les domaines de
               l'éducation, de la culture, des infrastructures et de
-              l'accompagnement de la jeunesse.
+              l'accompagnement de la jeunesse.avec
             </p>
           </div>
         </div>
