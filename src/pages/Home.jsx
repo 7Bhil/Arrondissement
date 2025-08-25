@@ -649,7 +649,7 @@ const Home = () => {
               Prendre Contact
             </Link>
             <Link
-              to="/audiences"
+              to="/"
               className="px-10 py-5 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-gray-900 transform hover:scale-105 transition-all duration-300 shadow-2xl"
             >
               Participer aux Audiences
