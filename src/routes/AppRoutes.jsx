@@ -1,16 +1,25 @@
-import { Routes, Route } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Home from "../pages/Home";
-import News from "../pages/News";
 import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
 import Apropos from "../pages/Apropos";
 
+// Composant pour gérer le scroll automatique
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function AppRoutes() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <ScrollToTop />
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -20,7 +29,6 @@ function AppRoutes() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      <Footer />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Palette,
   GraduationCap,
@@ -273,9 +274,9 @@ const Projects = () => {
             Vous souhaitez en savoir plus sur ces projets ou proposer une
             collaboration ?
           </p>
-          <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+          <Link to="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
             Nous Contacter
-          </button>
+          </Link>
         </div>
       </div>
     </section>
