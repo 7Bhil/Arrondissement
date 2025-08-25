@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Banner from "../components/Banner";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +11,7 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitStatus, setSubmitStatus] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -19,22 +20,39 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulation d'envoi
-    setTimeout(() => {
-      setSubmitStatus("success");
-      setIsSubmitting(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setSubmitStatus("success");
+        setIsSubmitting(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error(error.text);
+        setSubmitStatus("error");
+        setIsSubmitting(false);
       });
-    }, 2000);
   };
 
   const contactInfo = [
@@ -363,6 +381,17 @@ const Contact = () => {
                   "Envoyer le Message"
                 )}
               </button>
+              {/**Message pour echec ou sucess */}
+              {submitStatus === "success" && (
+                <p className="text-green-600 text-center font-medium">
+                  ✅ Message envoyé avec succès !
+                </p>
+              )}
+              {submitStatus === "error" && (
+                <p className="text-red-600 text-center font-medium">
+                  ❌ Une erreur est survenue, réessayez.
+                </p>
+              )}
             </form>
           </div>
 
