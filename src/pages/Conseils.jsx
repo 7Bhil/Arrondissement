@@ -128,6 +128,7 @@ export default function ChefArrondissementPage() {
                     src="/public/Photo2.jpeg"
                     alt="Formation des 507 relais communautaires"
                     className="w-full h-96 object-cover"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
