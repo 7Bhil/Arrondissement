@@ -57,7 +57,9 @@ const Home = () => {
                   className="absolute -bottom-4 -right-4 text-white p-6 rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300"
                   style={{ backgroundColor: "#9AC454" }}
                 >
-                  <p className="text-sm font-extralight">El Hadj MOUBARACOU LATIFU</p>
+                  <p className="text-sm font-extralight">
+                    El Hadj MOUBARACOU LATIFU
+                  </p>
                   <p className="text-sm font-bold">Au service du peuple</p>
                   <p className="text-xs opacity-90">Depuis 2020</p>
                 </div>
@@ -375,7 +377,7 @@ const Home = () => {
         </div>
 
         {/* CSS for animations */}
-        <style jsx='true'>{`
+        <style jsx="true">{`
           @keyframes fadeInUp {
             from {
               opacity: 0;
@@ -461,16 +463,19 @@ const Home = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Conseils d'arrondissement
-              </h3>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                Animation des conseils de quartier pour une gestion
-                participative
-              </p>
-              <div className="font-bold text-lg" style={{ color: "#AACDF6" }}>
-                29 quartiers
-              </div>
+              <Link to="/conseils">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Conseils d'arrondissement
+                </h3>
+
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Animation des conseils de quartier pour une gestion
+                  participative
+                </p>
+                <div className="font-bold text-lg" style={{ color: "#AACDF6" }}>
+                  29 quartiers
+                </div>
+              </Link>
             </div>
 
             <div className="text-center p-8 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
