@@ -7,7 +7,10 @@ import {
   MapPin,
   Award,
   Sparkles,
+  Image,
 } from "lucide-react";
+import Photo1 from "../assets/images/Photo1.jpeg";
+import Photo2 from "../assets/images/Photo2.jpeg";
 
 export default function ChefArrondissementPage() {
   const [activeProject, setActiveProject] = useState(null);
@@ -86,7 +89,7 @@ export default function ChefArrondissementPage() {
               <div className="relative">
                 <div className="w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl">
                   <img
-                    src="/public/Photo1.jpeg"
+                    src={Photo1}
                     alt="Moubaracou Latifu"
                     className="w-full h-full object-cover"
                   />
@@ -125,7 +128,7 @@ export default function ChefArrondissementPage() {
               <div className="mb-6">
                 <div className="relative overflow-hidden rounded-2xl">
                   <img
-                    src="/public/Photo2.jpeg"
+                    src={Photo2}
                     alt="Formation des 507 relais communautaires"
                     className="w-full h-96 object-cover"
                     loading="lazy"
