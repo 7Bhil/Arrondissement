@@ -7,10 +7,11 @@ import {
   MapPin,
   Award,
   Sparkles,
-  Image,
+  Shield, // Import ajouté pour l'icône Shield
 } from "lucide-react";
 import Photo1 from "../assets/images/Photo1.jpeg";
 import Photo2 from "../assets/images/Photo2.jpeg";
+import Photo3 from "../assets/images/Photo3.jpeg"; // Nouvelle image pour le conseil d'arrondissement
 
 export default function ChefArrondissementPage() {
   const [activeProject, setActiveProject] = useState(null);
@@ -175,6 +176,96 @@ export default function ChefArrondissementPage() {
                 </p>
               </div>
             </div>
+
+            {/* Nouvelle section Sécurité et éclairage public */}
+            <div className="bg-white rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 mt-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <Shield className="w-8 h-8 mr-3 text-amber-600" />
+                Sécurité et éclairage public au Premier Arrondissement de
+                Porto-Novo
+              </h2>
+              <p className="text-xl text-gray-700 mb-6 italic">
+                Une dynamique de paix et de progrès sous Moubaracou LATIFU
+              </p>
+
+              {/* Image du conseil d'arrondissement */}
+              <div className="mb-6">
+                <div className="relative overflow-hidden rounded-2xl">
+                  <div className="w-full h-96 items-center justify-center">
+                    <img
+                      src={Photo3}
+                      alt="Formation des 507 relais communautaires"
+                      className="w-full h-max object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <p className="text-white text-sm font-medium">
+                        Réunion sur la sécurité et l'éclairage public
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  Sous la présidence d'
+                  <strong className="text-amber-600">
+                    El Hadj Moubaracou Latifu
+                  </strong>
+                  , chef du premier Arrondissement de Porto-Novo, le 8e conseil
+                  d'arrondissement s'est tenu le 27 août 2025 avec autorités
+                  locales, chefs religieux et forces de l'ordre.
+                </p>
+
+                <p>
+                  Deux points principaux ont été abordés : le bilan des
+                  opérations d'éclairage public présenté par le service de
+                  mobilité urbaine, et la présentation de la commissaire
+                  centrale{" "}
+                  <strong className="text-amber-600">Eunice Sagbohan</strong>.
+                  Cette dernière a insisté sur l'objectif de{" "}
+                  <em className="text-amber-600 font-medium">
+                    zéro insécurité
+                  </em>{" "}
+                  à l'approche des fêtes, soulignant l'importance des opérations
+                  de déguerpissement pour garantir la paix.
+                </p>
+
+                <p>
+                  Le chef d'arrondissement a remercié les participants et
+                  réaffirmé son engagement à assurer un éclairage optimal et la
+                  sécurité des habitants, saluant le leadership de la
+                  commissaire centrale.
+                </p>
+
+                <div className="bg-amber-50 rounded-xl p-6 mt-6 border-l-4 border-amber-500">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                        <Award className="w-6 h-6 text-amber-600" />
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-amber-800 mb-2">
+                        Perspective
+                      </h4>
+                      <p className="text-amber-700">
+                        "Cette initiative démontre l'engagement constant de
+                        Moubaracou Latifu pour la sécurité et le bien-être des
+                        habitants du Premier Arrondissement."
+                      </p>
+                      <p className="text-amber-600 mt-2 font-medium">
+                        - Prince Agoli-Agbo
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="lg:col-span-1">
@@ -203,6 +294,10 @@ export default function ChefArrondissementPage() {
                   <div className="flex items-center justify-center space-x-2">
                     <Award className="w-4 h-4" />
                     <span>Vision de Développement</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <Shield className="w-4 h-4" />
+                    <span>Sécurité Publique</span>
                   </div>
                 </div>
               </div>
