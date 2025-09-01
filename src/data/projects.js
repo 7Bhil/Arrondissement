@@ -1,4 +1,4 @@
-import { Palette, GraduationCap, Lightbulb } from "lucide-react";
+import { Palette, GraduationCap, Lightbulb, Star } from "lucide-react";
 
 const projects = [
   {
@@ -13,10 +13,9 @@ const projects = [
     couleurText: "text-purple-700",
     categorie: "Culture",
     impact: "5 à 15 artistes soutenus",
-    // Liens vers différentes pages
-    lien: "/projets/artistes-peintres", // lien principal
-    lienExterne: null, // si tu veux un lien externe
-    hasDetailPage: true, // pour savoir si le projet a une page détaillée
+    lien: "/projets/artistes-peintres",
+    lienExterne: null,
+    hasDetailPage: true,
   },
   {
     id: 2,
@@ -30,7 +29,7 @@ const projects = [
     couleurText: "text-blue-700",
     categorie: "Éducation",
     impact: "10 à 50 enfants scolarisés",
-    lien: "/culture",
+    lien: "/projets/scolarite-orphelins",
     lienExterne: null,
     hasDetailPage: true,
   },
@@ -50,6 +49,37 @@ const projects = [
     lienExterne: null,
     hasDetailPage: true,
   },
+  // Nouveaux projets pour l'onglet Politique
+  {
+    id: 4, // On réutilise l'ID 4 pour rester cohérent
+    titre: "Leadership à Double Légitimité",
+    description:
+      "Gouvernance unique conciliant autorité morale et pragmatisme politique. Vision rassembleuse centrée sur la paix et le bien commun pour une cohésion sociale renforcée.",
+    icone: Star, // Ou 'Users' pour le rassemblement. 'Star' symbolise l'exemplarité et le leadership.
+    couleur: "bg-amber-500", // Or / Amber pour signifier la valeur, l'excellence.
+    couleurBg: "bg-amber-50",
+    couleurBorder: "border-amber-200",
+    couleurText: "text-amber-700",
+    categorie: "Politique",
+    impact:
+      "Stratégie d'enracinement local et de crédibilité politique renforcée", // Reprise de la citation finale
+    lien: "/politique",
+    lienExterne: null,
+    hasDetailPage: true,
+  },
 ];
+
+// Fonction utilitaire pour filtrer les projets par catégorie
+export const getProjectsByCategory = (category) => {
+  return projects.filter((project) => project.categorie === category);
+};
+
+// Objet regroupant tous les projets par catégorie
+export const projectsByCategory = {
+  Culture: getProjectsByCategory("Culture"),
+  Éducation: getProjectsByCategory("Éducation"),
+  Infrastructures: getProjectsByCategory("Infrastructures"),
+  Politique: getProjectsByCategory("Politique"),
+};
 
 export default projects;
