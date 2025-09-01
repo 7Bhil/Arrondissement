@@ -5,6 +5,7 @@ import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
 import Apropos from "../pages/Apropos";
 import Conseils from "../pages/Conseils";
+import Culture from "../pages/Culture";
 
 // Composant pour gérer le scroll automatique
 function ScrollToTop() {
@@ -29,6 +30,7 @@ function AppRoutes() {
           <Route path="/projets" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/conseils" element={<Conseils />} />
+          <Route path="/culture" element={<Culture />} />
         </Routes>
       </main>
     </div>

@@ -288,9 +288,10 @@ const Home = () => {
             {projects.map((projet) => {
               const IconeComponent = projet.icone;
               return (
-                <div
+                <Link // ← CHANGEMENT 1: <div> devient <a>
                   key={projet.id}
-                  className={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${projet.couleurBorder} border-2 overflow-hidden group`}
+                  to={projet.lien} // ← CHANGEMENT 2: ajout du lien
+                  className={`block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${projet.couleurBorder} border-2 overflow-hidden group`} // ← CHANGEMENT 3: ajout de "block"
                 >
                   {/* En-tête de la carte */}
                   <div
@@ -308,23 +309,19 @@ const Home = () => {
                         {projet.categorie}
                       </span>
                     </div>
-
                     {/* Effet décoratif */}
                     <div
                       className={`absolute -bottom-6 -right-6 w-24 h-24 ${projet.couleur} opacity-10 rounded-full`}
                     ></div>
                   </div>
-
                   {/* Contenu de la carte */}
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
                       {projet.titre}
                     </h3>
-
                     <p className="text-gray-600 leading-relaxed mb-4">
                       {projet.description}
                     </p>
-
                     {/* Impact/Statistique */}
                     <div
                       className={`inline-flex items-center px-4 py-2 rounded-lg ${projet.couleurBg} ${projet.couleurText} font-semibold text-sm`}
@@ -335,10 +332,9 @@ const Home = () => {
                       {projet.impact}
                     </div>
                   </div>
-
                   {/* Barre de couleur en bas */}
                   <div className={`h-1 ${projet.couleur}`}></div>
-                </div>
+                </Link> // ← CHANGEMENT 4: </div> devient </a>
               );
             })}
           </div>
